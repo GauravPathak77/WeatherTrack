@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="POST">
+        <label for="city">Enter city name:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Submit</button>
+    </form>
+    {% if temperature and weather_desc %}
+        <p>Temperature: {{ temperature }} &#8451;</p>
+        <p>Weather description: {{ weather_desc }}</p>
+    {% endif %}
+</body>
+</html>
