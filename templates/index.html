@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherTrack</title>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>Weather App</h1>
-    <form method="POST">
-        <label for="city">Enter city name:</label>
-        <input type="text" id="city" name="city">
-        <button type="submit">Submit</button>
-    </form>
-    {% if temperature and weather_desc %}
-        <p>Temperature: {{ temperature }} &#8451;</p>
-        <p>Weather description: {{ weather_desc }}</p>
+        <div class="headContainer">
+            <h1>WeatherTrack</h1>
+            <form method="POST">
+                <div class="form">
+                    <input type="text" name="city" placeholder="Enter city name" required>
+                    <button type="submit">Get</button>
+                </div>
+            </form>
+        </div>
+
+    {% if weather_info %}
+    <div class="middle">
+        <div class="cont1">
+        <img src= 
+        {{ ImageUrl }}
+        >
+        <h2>{{ weather_info.city }}</h2>
+    <p>Description: {{ weather_info.description }}</p>
+    </div>
+    <div class="container">
+        <div class="card">
+        <p>Temperature: {{ weather_info.temperature }}°C</p>
+    </div>
+    <div class="card">
+    <p>Humidity: {{ weather_info.humidity }}%</p>
+    </div>
+    </div>
+    </div>
+    <!-- <img src="{{ weather_info.map_url }}" alt="City Map"> -->
+    <!-- <iframe src="{{ weather_info.map_url }}" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
     {% endif %}
 </body>
 </html>
