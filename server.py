@@ -39,7 +39,7 @@ def weather():
             'humidity': data['main']['humidity'],
             'description': data['weather'][0]['description'],
             'icon': data['weather'][0]['icon'],
-            'map_url': map_url,
+            # 'map_url': map_url,
             'image' : ImageURL,
         }
     else:
