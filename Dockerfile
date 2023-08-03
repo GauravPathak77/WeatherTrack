@@ -6,7 +6,7 @@ RUN pip install Flask
 
 # Step 3: Copy the Flask application files into the container
 WORKDIR /app
-COPY server.py /app
+COPY app.py /app
 
 # Step 4: Specify the command to run the Flask application
-CMD ["python", "server.py"]
+CMD ["python", "app.py"]
